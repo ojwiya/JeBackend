@@ -14,6 +14,9 @@ public class NinjectRegistrations : NinjectModule
             {
                 Bind<IRestaurantService>().To<RestaurantService>();
             }
+
+            
+
         }
  
 }

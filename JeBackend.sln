@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{D15BA2A1-F943-4D0F-A809-D554379A74BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api2\Api.csproj", "{B979333E-1EBD-4ED7-AF96-2BFFCBDFBD1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{B979333E-1EBD-4ED7-AF96-2BFFCBDFBD1B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B2AF229C-06F1-4AD6-9DD2-267D64E955ED}"
 	ProjectSection(SolutionItems) = preProject
