@@ -16,10 +16,10 @@ using JeBackend.Core.Services;
 using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoMoq;
 
-namespace Tests.Controllers
+namespace Tests
 {
     [TestFixture]
-    public class RestaurantTest
+    public class RestaurantControllerTest
     {
         private IFixture _fixture;
         private Mock<IRestaurantService> _mockRestaurantService;
@@ -52,7 +52,6 @@ namespace Tests.Controllers
             // Assert
             Assert.IsNotNull(_restaurantResult);
             Assert.AreNotEqual(0, _restaurantResult.Restaurants.Count());
-            Assert.AreEqual("OK", _restaurantResult.ShortResultText);
 
         }
 
