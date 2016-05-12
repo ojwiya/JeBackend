@@ -6,7 +6,7 @@ namespace JeBackend.Core.Interfaces
 {
     public interface IRestaurantService
     {
-        GetRestaurantResult GetRestaurants(string outcode);
+        RestaurantSearchResult GetRestaurants(string outcode);
 
     }
 }

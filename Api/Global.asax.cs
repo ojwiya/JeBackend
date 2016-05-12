@@ -21,12 +21,12 @@ namespace Api
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            NinjectModule registrations = new NinjectRegistrations();
-            var kernel = new StandardKernel(registrations);
-            var ninjectResolver = new NinjectDependencyResolver(kernel);
+            //NinjectModule registrations = new NinjectRegistrations();
+            //var kernel = new StandardKernel(registrations);
+            //var ninjectResolver = new NinjectDependencyResolver(kernel);
 
-            DependencyResolver.SetResolver(ninjectResolver); 
-            GlobalConfiguration.Configuration.DependencyResolver = ninjectResolver;
+            //DependencyResolver.SetResolver(ninjectResolver); 
+            //GlobalConfiguration.Configuration.DependencyResolver = ninjectResolver;
         }
     }
 }

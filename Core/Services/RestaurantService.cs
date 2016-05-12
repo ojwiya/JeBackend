@@ -13,7 +13,7 @@ namespace JeBackend.Core.Services
             _restaurantRepository = restaurantRepository;
         }
 
-        public GetRestaurantResult GetRestaurants(string outcode)
+        public RestaurantSearchResult GetRestaurants(string outcode)
         {
             return _restaurantRepository.GetRestaurants(outcode);
         }

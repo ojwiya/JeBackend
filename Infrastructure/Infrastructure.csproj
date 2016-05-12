@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Repositories\JePublicAPI\Dto\ApiClientErrors.cs" />
+    <Compile Include="Repositories\JePublicAPI\Dto\GetRestaurantResult.cs" />
     <Compile Include="Repositories\JePublicAPI\RestaurantRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

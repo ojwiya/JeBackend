@@ -46,17 +46,17 @@
   <ItemGroup>
     <Compile Include="Interfaces\Repositories\IRestuarantRepository.cs" />
     <Compile Include="Interfaces\Services\IRestuarantService.cs" />
-    <Compile Include="IoC\DependencyResolver.cs" />
     <Compile Include="Models\Deal.cs" />
-    <Compile Include="Models\GetRestaurantResult.cs" />
+    <Compile Include="Models\RestaurantSearchResult.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Rating.cs" />
     <Compile Include="Models\CuisineType.cs" />
-    <Compile Include="Models\RestaurantResult.cs" />
+    <Compile Include="Models\Restaurants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\RestaurantService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IoC\DependencyRegistration.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

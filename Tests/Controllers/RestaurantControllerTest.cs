@@ -23,7 +23,7 @@ namespace Tests
     {
         private IFixture _fixture;
         private Mock<IRestaurantService> _mockRestaurantService;
-        private GetRestaurantResult _restaurantResult;
+        private RestaurantSearchResult _restaurantResult;
         private RestaurantController _controller;
         
         [SetUp]
@@ -35,13 +35,13 @@ namespace Tests
 
             _controller = new RestaurantController(_mockRestaurantService.Object);
 
-            _restaurantResult = _fixture.Build<GetRestaurantResult>()
+            _restaurantResult = _fixture.Build<RestaurantSearchResult>()
                                 .With(x => x.Restaurants, 
-                                    _fixture.CreateMany<RestaurantSearchResult>().ToList())
+                                    _fixture.CreateMany<Restaurants>().ToList())
                                 .Create();
 
             _mockRestaurantService.Setup(m => m.GetRestaurants(It.IsAny<string>()))
-                .Returns((GetRestaurantResult r) => { return  _restaurantResult; });
+                .Returns((RestaurantSearchResult r) => { return _restaurantResult; });
         }
         
         [Test]

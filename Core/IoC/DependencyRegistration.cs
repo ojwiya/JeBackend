@@ -1,22 +1,21 @@
 ﻿using JeBackend.Core.Interfaces;
 using JeBackend.Core.Services;
-using Ninject.Modules;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Api
+namespace JeBackend.Core.IoC
 {
-public class NinjectRegistrations : NinjectModule
-        {
+    public class DependencyRegistration: Ninject.Modules.NinjectModule
+    {
             public override void Load()
             {
+                Ninject.IKernel kernal = new StandardKernel();  
                 Bind<IRestaurantService>().To<RestaurantService>();
             }
 
-            
-
-        }
- 
+    }
 }

@@ -5,7 +5,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using JeBackend.Core.Interfaces;
 using JeBackend.Core.Models;
-using JeBackend.Core.Models;
+using JeBackend.Infrastructure.Repositories.Dto;
+
 
 namespace JeBackend.Infrastructure.Repositories
 {
@@ -21,10 +22,11 @@ namespace JeBackend.Infrastructure.Repositories
         //    DbContext.RestaurantEntries.Add(Guid.NewGuid(), entry);
         //}
 
-        public GetRestaurantResult GetRestaurants(string outcode)
+        public RestaurantSearchResult GetRestaurants(string outcode)
         {
 
             urlParameters = "?q=" + outcode;
+            RestaurantSearchResult restaurantSearchResult = new RestaurantSearchResult();
 
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(URL);
@@ -32,6 +34,10 @@ namespace JeBackend.Infrastructure.Repositories
             // Add an Accept header for JSON format.
             client.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", "VGVjaFRlc3RBUEk6dXNlcjI=");
+            client.DefaultRequestHeaders.TryAddWithoutValidation("Accept-Tenant", "uk");
+            client.DefaultRequestHeaders.TryAddWithoutValidation("Accept-Language", "en-GB");
+            client.DefaultRequestHeaders.TryAddWithoutValidation("Host", "public.je-apis.com");
 
             // List data response.
             HttpResponseMessage response = client.GetAsync(urlParameters).Result;  // Blocking call!
@@ -39,7 +45,12 @@ namespace JeBackend.Infrastructure.Repositories
             {
                 // Parse the response body. Blocking!
                 GetRestaurantResult responseResult = response.Content.ReadAsAsync<GetRestaurantResult>().Result;
-                return responseResult;
+
+                restaurantSearchResult.Restaurants = responseResult.Restaurants;
+                restaurantSearchResult.ShortResultText = responseResult.ShortResultText;
+                restaurantSearchResult.HasErrors = responseResult.HasErrors;
+
+                return restaurantSearchResult;
             }
             else
             {
