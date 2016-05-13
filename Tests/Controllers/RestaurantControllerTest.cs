@@ -11,7 +11,6 @@ using NUnit;
 using JeBackend.Core.Interfaces;
 using NUnit.Framework;
 using JeBackend.Core.Models;
-using Ploeh.AutoFixture.NUnit3;
 using JeBackend.Core.Services;
 using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoMoq;
