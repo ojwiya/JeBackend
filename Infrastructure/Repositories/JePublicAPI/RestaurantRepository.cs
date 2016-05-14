@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using JeBackend.Core.Interfaces;
 using JeBackend.Core.Models;
 using JeBackend.Infrastructure.Repositories.Dto;
+using Newtonsoft.Json;
 
 
 namespace JeBackend.Infrastructure.Repositories
@@ -50,7 +51,9 @@ namespace JeBackend.Infrastructure.Repositories
         private static RestaurantSearchResult ParseResponse(RestaurantSearchResult restaurantSearchResult, HttpResponseMessage response)
         {
             // Parse the response body. Blocking!
-            GetRestaurantResult responseResult = response.Content.ReadAsAsync<GetRestaurantResult>().Result;
+           GetRestaurantResult responseResult = response.Content.ReadAsAsync<GetRestaurantResult>().Result;
+
+           // GetRestaurantResult responseResult = JsonConvert.DeserializeObject<GetRestaurantResult>(response.Content.ReadAsStringAsync().Result);
 
             restaurantSearchResult.Restaurants = responseResult.Restaurants;
             restaurantSearchResult.ShortResultText = responseResult.ShortResultText;

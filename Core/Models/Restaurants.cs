@@ -29,7 +29,7 @@ namespace JeBackend.Core.Models
             public Boolean IsOpenNowForDelivery {get;set;}
             public Boolean IsOpenNowForCollection {get;set;}
             public Double RatingStars {get;set;}
-            public Image[] Logo {get;set;}
+            public IList<Image> Logo { get; set; }
             public IList<Deal> Deals {get;set;}
             public Int32 NumberOfRatings  {get;set;}
             public Boolean ShowSmiley  {get;set;}
