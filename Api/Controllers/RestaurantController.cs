@@ -10,7 +10,7 @@ using System.Web.Http.Cors;
 namespace Api.Controllers
 {
     [AllowAnonymous]
-    //[EnableCors(origins: "http://localhost", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class RestaurantController : ApiController
     {
         private readonly IRestaurantService _restaurantService;

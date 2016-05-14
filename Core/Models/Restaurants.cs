@@ -29,7 +29,7 @@ namespace JeBackend.Core.Models
             public Boolean IsOpenNowForDelivery {get;set;}
             public Boolean IsOpenNowForCollection {get;set;}
             public Double RatingStars {get;set;}
-            public IList<Image> Logo {get;set;}
+            public Image[] Logo {get;set;}
             public IList<Deal> Deals {get;set;}
             public Int32 NumberOfRatings  {get;set;}
             public Boolean ShowSmiley  {get;set;}
@@ -37,6 +37,22 @@ namespace JeBackend.Core.Models
             public Int32 SmileyResult  {get;set;}
             public string SmileyUrl  {get;set;}
             public string SmileyElite { get; set; }
+            public double Score { get; set; }
+            public Double? DriveDistance{ get; set; }
+            public Boolean DriveInfoCalculated { get; set; }
+            public DateTime NewnessDate{ get; set; }
+            public Int32? DeliveryMenuId { get; set; }
+            public DateTime? DeliveryOpeningTime{ get; set; }
+            public Double? DeliveryCost { get; set; }
+            public Double? MinimumDeliveryValue { get; set; }
+            public Int32? DeliveryTime { get; set; }
+            public DateTime OpeningTime { get; set; }
+            public string OpeningTimeIso{ get; set; }
+            public Boolean SendsOnItsWayNotifications { get; set; }
+
+
+
+
 
 }
 }
